@@ -23,11 +23,11 @@ public class AccountController : Controller
     [HttpPost]
     [AllowAnonymous]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Login(LoginModel model)
+    public async Task<IActionResult> Login(LoginViewModel viewModel)
     {
         if (ModelState.IsValid)
         {
-            var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, lockoutOnFailure: false);
+            var result = await _signInManager.PasswordSignInAsync(viewModel.Email, viewModel.Password, viewModel.RememberMe, lockoutOnFailure: false);
 
             if (result.Succeeded)
             {
@@ -44,6 +44,6 @@ public class AccountController : Controller
                 ModelState.AddModelError(string.Empty, "Invalid login attempt.");
             }
         }
-        return View(model);
+        return View(viewModel);
     }
 }
