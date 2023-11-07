@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Web_Application.Data;
 
@@ -17,6 +18,14 @@ builder.Services.AddDbContext<MyDbContext>(o =>
 
 #endregion
 
+#region Authentication
+
+builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+    .AddEntityFrameworkStores<MyDbContext>()
+    .AddSignInManager<SignInManager<IdentityUser>>()
+    .AddDefaultTokenProviders();
+
+#endregion
 
 var app = builder.Build();
 
