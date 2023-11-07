@@ -17,4 +17,9 @@
       <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.11" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Controllers\Account\" />
+      <Folder Include="Views\Account\" />
+    </ItemGroup>
+
 </Project>
