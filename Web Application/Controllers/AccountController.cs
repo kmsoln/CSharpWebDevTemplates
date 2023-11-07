@@ -8,10 +8,12 @@ namespace Web_Application.Controllers;
 public class AccountController : Controller
 {
     
+    private readonly UserManager<IdentityUser> _userManager;
     private readonly SignInManager<IdentityUser> _signInManager;
-    
-    public AccountController(SignInManager<IdentityUser> signInManager)
+
+    public AccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
     {
+        _userManager = userManager;
         _signInManager = signInManager;
     }
 
@@ -51,4 +53,36 @@ public class AccountController : Controller
     {
         return View();
     }
+    
+    [HttpPost]
+    [AllowAnonymous]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Register(RegisterViewModel model)
+    {
+        if (ModelState.IsValid)
+        {
+            if (model.Password != model.ConfirmPassword)
+            {
+                ModelState.AddModelError(string.Empty, "The password and confirmation password do not match.");
+                return View(model);
+            }
+
+            var user = new IdentityUser { UserName = model.Email, Email = model.Email };
+            var result = await _userManager.CreateAsync(user, model.Password);
+
+            if (result.Succeeded)
+            {
+                // Registration successful, redirect to the Home page
+                return RedirectToAction("Index", "Home");
+            }
+
+            foreach (var error in result.Errors)
+            {
+                ModelState.AddModelError(string.Empty, error.Description);
+            }
+        }
+
+        return View(model);
+    }
+
 }
