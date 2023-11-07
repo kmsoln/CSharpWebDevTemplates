@@ -19,7 +19,6 @@
 
     <ItemGroup>
       <Folder Include="Controllers\Account\" />
-      <Folder Include="Views\Account\" />
     </ItemGroup>
 
 </Project>
