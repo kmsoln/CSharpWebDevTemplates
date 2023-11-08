@@ -95,4 +95,9 @@ public class AccountController : Controller
         // Redirect to the Home page or another page after logout
         return RedirectToAction("Index", "Home");
     }
+    
+    public IActionResult Profile()
+    {
+        return View();
+    }
 }
