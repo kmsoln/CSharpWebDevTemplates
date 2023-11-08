@@ -1,6 +1,6 @@
-﻿namespace Web_Application.Models;
+﻿using System.ComponentModel.DataAnnotations;
 
-using System.ComponentModel.DataAnnotations;
+namespace Web_Application.Models;
 
 public class ChangePasswordViewModel
 {

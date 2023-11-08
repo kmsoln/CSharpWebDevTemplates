@@ -139,7 +139,7 @@ public class AccountController : Controller
         if (changePasswordResult.Succeeded)
         {
             // Password changed successfully, you can redirect to a success page or perform other actions
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Profile", "Account");
         }
         else
         {
