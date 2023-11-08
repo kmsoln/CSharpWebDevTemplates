@@ -96,8 +96,18 @@ public class AccountController : Controller
         return RedirectToAction("Index", "Home");
     }
     
+    [Authorize]
     public IActionResult Profile()
     {
-        return View();
+        var user = _userManager.GetUserAsync(User).Result;
+
+        var profileViewModel = new ProfileViewModel
+        {
+            UserName = user.UserName,
+            Email = user.Email,
+            // Populate other profile properties as needed
+        };
+
+        return View(profileViewModel);
     }
 }
