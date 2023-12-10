@@ -1,48 +1,68 @@
 ﻿@using Web_Application.Config
 
+<!-- 
+Navigation Bar
+    
+This navigation bar is a part of the layout view and provides links to various sections
+of the application. 
+
+Notice : It includes conditional rendering based on the user's authentication status. >> Authorization <<
+-->
+
 <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-        <div class="container-fluid">
-            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">@ProjectInfo.ProjectName</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                <ul class="navbar-nav flex-grow-1">
+    <div class="container-fluid">
+        <!-- Brand logo and link to the Home/Index action -->
+        <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">@ProjectInfo.ProjectName</a>
+
+        <!-- Navbar toggle button for smaller screens -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar content with flex layout -->
+        <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+            <!-- Left-aligned navigation links -->
+            <ul class="navbar-nav flex-grow-1">
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                </li>
+            </ul>
+
+            <!-- Right-aligned navigation links with conditional rendering based on authentication -->
+            <ul class="navbar-nav">
+                @if (User.Identity is {IsAuthenticated: true })
+                {
+                    <!-- Display welcome message and profile-related links for authenticated users -->
                     <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        <span class="nav-link text-dark">Welcome, @User.Identity.Name</span>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Profile">
+                            <button class="btn btn-link">Profile</button>
+                        </a>
                     </li>
-                </ul>
-               <ul class="navbar-nav">
-                   @if (User.Identity is {IsAuthenticated: true })
-                   {
-                       <li class="nav-item">
-                           <span class="nav-link text-dark">Welcome, @User.Identity.Name</span>
-                       </li>
-                       <li class="nav-item">
-                           <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Profile">
-                               <button class="btn btn-link">Profile</button>
-                           </a>
-                       </li>
-                       <li class="nav-item">
-                           <form asp-area="" asp-controller="Account" asp-action="Logout" method="post">
-                               <button type="submit" class="btn btn-link text-dark">Logout</button>
-                           </form>
-                       </li>
-                   }
-                   else
-                   {
-                       <li class="nav-item">
-                           <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Login">Login</a>
-                       </li>
-                       <li class="nav-item">
-                           <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Register">Register</a>
-                       </li>
-                   }
-               </ul>
-            </div>
+                    <li class="nav-item">
+                        <!-- Logout form for authenticated users -->
+                        <form asp-area="" asp-controller="Account" asp-action="Logout" method="post">
+                            <button type="submit" class="btn btn-link text-dark">Logout</button>
+                        </form>
+                    </li>
+                }
+                else
+                {
+                    <!-- Display login and register links for non-authenticated users -->
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Register">Register</a>
+                    </li>
+                }
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
