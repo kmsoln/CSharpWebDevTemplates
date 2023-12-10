@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Web_Application.Auth;
 using Web_Application.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,9 +21,9 @@ builder.Services.AddDbContext<MyDbContext>(o =>
 
 #region Authentication
 
-builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+builder.Services.AddIdentity<AppUser, AppRole>()
     .AddEntityFrameworkStores<MyDbContext>()
-    .AddSignInManager<SignInManager<IdentityUser>>()
+    .AddSignInManager<SignInManager<AppUser>>()
     .AddDefaultTokenProviders();
 
 #endregion
