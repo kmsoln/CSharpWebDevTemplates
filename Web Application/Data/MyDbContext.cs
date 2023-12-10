@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Web_Application.Models.Auth;
+using Web_Application.Auth;
 
 namespace Web_Application.Data;
 

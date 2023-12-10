@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Web_Application.Auth;
 using Web_Application.Data;
-using Web_Application.Models.Auth;
 
 var builder = WebApplication.CreateBuilder(args);
 

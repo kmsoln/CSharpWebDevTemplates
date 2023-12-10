@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Web_Application.Models.Auth;
+using Web_Application.Auth;
 
 namespace Web_Application.Controllers.Account;
 
