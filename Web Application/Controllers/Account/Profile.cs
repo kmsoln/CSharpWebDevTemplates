@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Web_Application.Models;
+using Web_Application.Models.Account;
 
 namespace Web_Application.Controllers.Account;
 

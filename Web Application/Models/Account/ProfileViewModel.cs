@@ -1,7 +1,6 @@
-﻿namespace Web_Application.Models;
+﻿using System.ComponentModel.DataAnnotations;
 
-using System;
-using System.ComponentModel.DataAnnotations;
+namespace Web_Application.Models.Account;
 
 public class ProfileViewModel
 {
