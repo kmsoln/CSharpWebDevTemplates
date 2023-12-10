@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Web_Application.Models;
+namespace Web_Application.Models.Account;
 
 public class ChangeMailViewModel
 {

@@ -1,8 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
-namespace Web_Application.Models;
+namespace Web_Application.Models.Account;
 
-public class LoginViewModel
+public class LoginViewModel : Model
 {
     [Required(ErrorMessage = "Email is required")]
     [EmailAddress(ErrorMessage = "Invalid email address")]

@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using Web_Application.Models;
+using Web_Application.Models.Account;
 using Web_Application.Models.Auth;
 
 namespace Web_Application.Controllers.Account;
