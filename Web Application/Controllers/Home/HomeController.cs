@@ -2,17 +2,10 @@
 using Microsoft.AspNetCore.Mvc;
 using Web_Application.Models;
 
-namespace Web_Application.Controllers;
+namespace Web_Application.Controllers.Home;
 
 public class HomeController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
-
-    public HomeController(ILogger<HomeController> logger)
-    {
-        _logger = logger;
-    }
-
     public IActionResult Index()
     {
         return View();
