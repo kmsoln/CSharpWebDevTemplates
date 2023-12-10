@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Web_Application.Models;
+using Web_Application.Models.Auth;
 
 namespace Web_Application.Controllers.Account;
 
@@ -27,7 +28,7 @@ public partial class AccountController
                 return View(model);
             }
 
-            var user = new IdentityUser { UserName = model.Email, Email = model.Email };
+            var user = new AppUser { UserName = model.Email, Email = model.Email };
             var result = await _userManager.CreateAsync(user, model.Password);
 
             if (result.Succeeded)
