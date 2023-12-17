@@ -9,6 +9,7 @@ public partial class AccountController
     
     public IActionResult Login()
     {
+        _logger.LogInformation("Login GET action called.");
         return View();
     }
     
@@ -17,26 +18,30 @@ public partial class AccountController
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Login(LoginViewModel viewModel)
     {
+        _logger.LogInformation("Login POST action called.");
+        
         if (ModelState.IsValid)
         {
-            var result = await _signInManager.PasswordSignInAsync(viewModel.Email, viewModel.Password, viewModel.RememberMe, lockoutOnFailure: false);
-
+            var result = await _signInManager.PasswordSignInAsync(
+                viewModel.Email!, 
+                viewModel.Password!, 
+                viewModel.RememberMe, 
+                lockoutOnFailure: false
+            );
+            
             if (result.Succeeded)
             {
-                // User can log in, perform any desired actions
-                // For example, set authentication cookies and redirect
-                // to a specific page or the returnUrl
-
-                // For example, redirect to the Home page
+                _logger.LogInformation($"User {viewModel.Email} logged in successfully.");
                 return RedirectToAction("Index", "Home");
             }
             else
             {
-                // User cannot log in, display an error message and stay on the login page
                 ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                _logger.LogWarning($"Invalid login attempt for user {viewModel.Email}.");
             }
         }
+        
+        _logger.LogWarning("Login POST action: ModelState is not valid.");
         return View(viewModel);
     }
-    
 }
