@@ -10,9 +10,11 @@ public partial class AccountController
     [Authorize]
     public async Task<IActionResult> Logout()
     {
+        _logger.LogInformation("Logout POST action called.");
+        
         await _signInManager.SignOutAsync();
-            
-        // Redirect to the Home page or another page after logout
+        
+        _logger.LogInformation("User logged out successfully.");
         return RedirectToAction("Index", "Home");
     }
 }
