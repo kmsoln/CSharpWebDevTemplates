@@ -4,9 +4,9 @@ using Web_Application.Auth;
 
 namespace Web_Application.Data;
 
-public class MyDbContext : IdentityDbContext<AppUser>
+public class AuthDbContext : IdentityDbContext<AppUser>
 {
-    public MyDbContext(DbContextOptions<MyDbContext> options)
+    public AuthDbContext(DbContextOptions<AuthDbContext> options)
         : base(options)
     {
     }

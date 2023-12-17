@@ -12,7 +12,7 @@ builder.Services.AddControllersWithViews();
 
 string connectionString = builder.Configuration.GetConnectionString("MyDatabase") ?? "";
 
-builder.Services.AddDbContext<MyDbContext>(o =>
+builder.Services.AddDbContext<AuthDbContext>(o =>
 {
     o.UseNpgsql(connectionString);
 });
@@ -22,7 +22,7 @@ builder.Services.AddDbContext<MyDbContext>(o =>
 #region Authentication
 
 builder.Services.AddIdentity<AppUser, IdentityRole>()
-    .AddEntityFrameworkStores<MyDbContext>()
+    .AddEntityFrameworkStores<AuthDbContext>()
     .AddSignInManager<SignInManager<AppUser>>()
     .AddDefaultTokenProviders();
 
