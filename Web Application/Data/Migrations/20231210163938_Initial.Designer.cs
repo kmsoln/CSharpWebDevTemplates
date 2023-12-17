@@ -11,7 +11,7 @@ using Web_Application.Data;
 
 namespace Web_Application.Data.Migrations
 {
-    [DbContext(typeof(MyDbContext))]
+    [DbContext(typeof(AuthDbContext))]
     [Migration("20231210163938_Initial")]
     partial class Initial
     {
