@@ -11,6 +11,7 @@ public partial class AccountController
     [Authorize]
     public IActionResult ChangePassword()
     {
+        _logger.LogInformation("ChangePassword GET action called.");
         return View();
     }
     
@@ -19,34 +20,50 @@ public partial class AccountController
     [Authorize]
     public async Task<IActionResult> ChangePassword(ChangePasswordViewModel model)
     {
+        _logger.LogInformation("ChangePassword POST action called.");
+        
         if (!ModelState.IsValid)
         {
+            _logger.LogWarning("ChangePassword: ModelState is not valid.");
             return View(model);
         }
-
+        
         var user = await _userManager.GetUserAsync(User);
+        
         if (user == null)
         {
+            _logger.LogWarning("ChangePassword: User not found. Redirecting to Login.");
             return RedirectToAction("Login");
         }
 
-        var changePasswordResult = await _userManager.ChangePasswordAsync(user, model.OldPassword, model.NewPassword);
-
-        if (changePasswordResult.Succeeded)
+        try
         {
-            // Password changed successfully, you can redirect to a success page or perform other actions
-            return RedirectToAction("Profile", "Account");
-        }
-        else
-        {
-            // Password change failed, add errors to the ModelState
-            foreach (var error in changePasswordResult.Errors)
+            var changePasswordResult = await _userManager.ChangePasswordAsync(
+                user, 
+                model.OldPassword!, 
+                newPassword:model.NewPassword!
+            );
+            
+            if (changePasswordResult.Succeeded)
             {
-                ModelState.AddModelError(string.Empty, error.Description);
+                _logger.LogInformation($"Password changed successfully for user {user.UserName}.");
+                return RedirectToAction("Profile", "Account");
             }
-
-            return View(model);
+            else
+            {
+                foreach (var error in changePasswordResult.Errors)
+                {
+                    ModelState.AddModelError(string.Empty, error.Description);
+                    _logger.LogError($"Error changing password for user {user.UserName}: {error.Description}");
+                }
+            }
         }
+        catch (Exception ex)
+        {
+            _logger.LogError($"An error occurred while changing password: {ex.Message}");
+            // Handle other exception details if needed
+        }
+        
+        return View(model);
     }
-    
 }
