@@ -78,8 +78,8 @@ Feel free to explore the projects and dive into the code to better understand th
 | [Model-View-Controller (MVC)][mvc-rdme] | REST     | PostgreSQL    | Razor              |
 
 [monolith-rdme]: Web-Application/README.md
-[microservice-rdme]: vlsu-shop/README.md
-[mvc-rdme]: vlsu-portal/README.md
+[microservice-rdme]: Web-Application/README.md
+[mvc-rdme]: Web-Application/README.md
 
 
 ## How to Use This Repository
