@@ -77,10 +77,9 @@ Feel free to explore the projects and dive into the code to better understand th
 | [Microservices][microservice-rdme]      | REST     | PostgreSQL    | React              |
 | [Model-View-Controller (MVC)][mvc-rdme] | REST     | PostgreSQL    | Razor              |
 
-[monolith-rdme]: Web%20Application/README.md
-[microservice-rdme]: Web%20Application/README.md
-[mvc-rdme]: Web%20Application/README.md
-
+[monolith-rdme]: ./Web%20Application/README.md
+[microservice-rdme]: ./Web%20Application/README.md
+[mvc-rdme]: ./Web%20Application/README.md
 
 ## How to Use This Repository
 
