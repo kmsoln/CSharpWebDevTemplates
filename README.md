@@ -75,9 +75,9 @@ Feel free to explore the projects and dive into the code to better understand th
 | [Microservices][microservice-rdme]      | REST     | PostgreSQL    | React              |
 | [Model-View-Controller (MVC)][mvc-rdme] | REST     | PostgreSQL    | Razor              |
 
-[monolith-rdme]: https://github.com/kmsoln/VlsuProjects/tree/master/Web%20Application
-[microservice-rdme]: https://github.com/kmsoln/VlsuProjects/tree/master/Web%20Application
-[mvc-rdme]: https://github.com/kmsoln/VlsuProjects/tree/master/Web%20Application
+[monolith-rdme]: https://github.com/kmsoln/VlsuProjects/blob/master/Web%20Application/README-EN.md
+[microservice-rdme]: https://github.com/kmsoln/VlsuProjects/blob/master/Web%20Application/README-EN.md
+[mvc-rdme]: https://github.com/kmsoln/VlsuProjects/blob/master/Web%20Application/README-EN.md
 
 ## How to Use This Repository
 
