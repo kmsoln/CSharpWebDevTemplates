@@ -214,17 +214,6 @@ public class ApplicationDbContext : DbContext
 
 3.3. Run the following command to initialize a migration, specifying the output path:
 
-For SQL Server:
-```bash
-dotnet ef migrations add InitialCreate --output Data/Migrations
-```
-
-For PostgreSQL:
-```bash
-dotnet ef migrations add InitialCreate --output Data/Migrations
-```
-
-For SQLite:
 ```bash
 dotnet ef migrations add InitialCreate --output Data/Migrations
 ```
