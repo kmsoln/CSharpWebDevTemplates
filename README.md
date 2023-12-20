@@ -1,7 +1,5 @@
 [creator]: kmsoln
 <div align="center">
-    <img src="https://www.vlsu.ru/fileadmin/templates/vlsulogo_108x108.svg"
-        height="365"/>
     <h3 style="text-align: center; color: tan">ВЛАДИМИРСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ</h3>
 </div>
 
