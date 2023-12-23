@@ -69,11 +69,11 @@ Feel free to explore the projects and dive into the code to better understand th
 
 ---
 
-| Project                                 | Protocol | Database      | Frontend Framework |
-|-----------------------------------------|----------|---------------|--------------------|
-| [Monolith][monolith-rdme]               | REST     | PostgreSQL    | Blazor             |
-| [Microservices][microservice-rdme]      | REST     | PostgreSQL    | React              |
-| [Model-View-Controller (MVC)][mvc-rdme] | REST     | PostgreSQL    | Razor              |
+| Project                                 | Protocol | Database      | Frontend Framework | Style Framework |
+|-----------------------------------------|----------|---------------|--------------------|-----------------|
+| [Monolith][monolith-rdme]               | REST     | PostgreSQL    | Blazor             | CSS             |
+| [Microservices][microservice-rdme]      | REST     | PostgreSQL    | React              | CSS             |
+| [Model-View-Controller (MVC)][mvc-rdme] | REST     | PostgreSQL    | Razor              | Bootstrap       |
 
 [monolith-rdme]: https://github.com/kmsoln/VlsuProjects/blob/master/Web%20Application/README-EN.md
 [microservice-rdme]: https://github.com/kmsoln/VlsuProjects/blob/master/Web%20Application/README-EN.md
