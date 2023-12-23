@@ -215,7 +215,7 @@ public class ApplicationDbContext : DbContext
 3.3. Run the following command to initialize a migration, specifying the output path:
 
 ```bash
-dotnet ef migrations add InitialCreate --output Data/Migrations
+dotnet ef migrations add InitialCreate --output-dir Data/Migrations
 ```
 
 #### Step 4: Update Database:
