@@ -3,6 +3,6 @@
 public static class ProjectInfo
 {
     public static readonly string ProjectName = "MyProject";
-    public static readonly string StudentName = "Karim Soliman";
-    public static readonly string StudentGroup = "PRI-121";
+    public static readonly string StudentName = "";
+    public static readonly string StudentGroup = "";
 }
