@@ -12,7 +12,7 @@ public partial class RoleController : Controller
     public RoleController(RoleManager<IdentityRole> roleManager, ILogger<RoleController> logger)
     {
         _roleManager = roleManager;
-        _logger = logger; // Inject the logger
+        _logger = logger;
     }
 
 }
