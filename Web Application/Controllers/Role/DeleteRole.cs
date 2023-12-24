@@ -8,24 +8,32 @@ public partial class RoleController
     [HttpPost]
     public async Task<IActionResult> DeleteRole(string roleId)
     {
-        var role = await _roleManager.FindByIdAsync(roleId);
-
-        if (role == null)
+        try
         {
-            // Role not found
-            return NotFound("Role not exists");
+            var role = await _roleManager.FindByIdAsync(roleId);
+
+            if (role == null)
+            {
+                _logger.LogWarning($"Role with ID '{roleId}' not found.");
+                return NotFound("Role not exists");
+            }
+
+            var result = await _roleManager.DeleteAsync(role);
+
+            if (result.Succeeded)
+            {
+                _logger.LogInformation($"Role '{role.Name}' deleted successfully.");
+                return RedirectToAction("ManageRoles");
+            }
+
+            _logger.LogError($"Failed to delete role '{role.Name}'. Errors: {string.Join(", ", result.Errors)}");
+            ModelState.AddModelError("", "Failed to delete the role. Please try again.");
+            return View("ManageRoles"); // Replace "ManageRoles" with your actual view name for role management
         }
-
-        var result = await _roleManager.DeleteAsync(role);
-
-        if (result.Succeeded)
+        catch (Exception ex)
         {
-            // Role deletion successful, return no content
-            return RedirectToAction("ManageRoles");
+            _logger.LogError(ex, "An error occurred while deleting the role.");
+            return StatusCode(500, "An error occurred while deleting the role.");
         }
-
-        // Role deletion failed, return errors
-        return BadRequest(result.Errors);
-        
     }
 }
