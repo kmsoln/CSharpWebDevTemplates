@@ -1,15 +1,15 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Web_Application.Models.Role;
 
 namespace Web_Application.Controllers.Role;
 
 public partial class RoleController 
 {
     
-        [HttpPost]
-        // Endpoint to create a new role
-        public async Task<IActionResult> CreateRole(string roleName)
+    [HttpPost]
+    public async Task<IActionResult> CreateRole(string roleName)
+    {
+        try
         {
             var newRole = new IdentityRole { Name = roleName };
 
@@ -17,11 +17,18 @@ public partial class RoleController
 
             if (result.Succeeded)
             {
-                // Role creation successful, return the created role
+                _logger.LogInformation($"Role '{newRole.Name}' created successfully.");
                 return RedirectToAction("ManageRoles");
             }
 
-            // Role creation failed, return errors
-            return BadRequest(result.Errors);
+            _logger.LogError($"Failed to create role '{newRole.Name}'. Errors: {string.Join(", ", result.Errors)}");
+            ModelState.AddModelError("", "Failed to create the role. Please check the provided information.");
+            return View("ManageRoles");
         }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "An error occurred while creating the role.");
+            return StatusCode(500, "An error occurred while creating the role.");
+        }
+    }
 }
