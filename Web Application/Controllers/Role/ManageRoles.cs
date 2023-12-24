@@ -17,6 +17,7 @@ public partial class RoleController
             RoleName = role.Name
         });
 
+        // Pass the collection of RoleViewModels to the view for rendering
         return View(roleViewModels);
     }
 }
