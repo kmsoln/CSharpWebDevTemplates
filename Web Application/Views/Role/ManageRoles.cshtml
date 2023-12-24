@@ -1,0 +1,83 @@
+﻿@model IEnumerable<Web_Application.Models.Role.RoleViewModel>
+
+@{
+    ViewData["Title"] = "Manage Roles";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<button class="btn btn-primary" onclick="toggleCreate()">Add Role</button>
+<div id="create-panel" style="display: none;">
+    <form  asp-action="CreateRole" method="post">
+        <label for="RoleName">Role Name:</label>
+        <input type="text" id="RoleName" name="RoleName" class="form-control" />
+        <button type="submit" class="btn btn-success">Add</button>
+    </form>
+    
+    <button class="btn btn-secondary" onclick="cancelCreate()">Cancel</button>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Role Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var role in Model)
+        {
+            <tr>
+                <td>@role.RoleName</td>
+                <td>
+                    <span id="edit-@role.Id">
+                        <button class="btn btn-warning" href="javascript:void(0);" onclick="toggleEdit('@role.Id', '@role.RoleName')">Edit</button> |
+                    </span>
+                    
+                    <form id="delete-@role.Id" asp-action="DeleteRole" method="post">
+                        <input type="hidden" name="RoleId" value="@role.Id" />
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                    
+                    <div  id="edit-panel-@role.Id" style="display: none;">
+                        <form asp-action="UpdateRole" asp-controller="Role" method="post">
+                            <label for="newRoleName-@role.Id">New Role Name:</label>
+                            <input type="hidden" name="RoleId" value="@role.Id" />
+                            <input type="text" id="newRoleName-@role.Id" name="newRoleName" value="@role.RoleName" class="form-control" />
+                            <button type="submit" class="btn btn-success">Save</button>
+                            
+                        </form>
+                        <button class="btn btn-secondary" onclick="cancelEdit('@role.Id')">Cancel</button>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script>
+    function toggleElementDisplay(elementId, displayStyle) {
+        document.getElementById(elementId).style.display = displayStyle;
+    }
+
+    function toggleEdit(roleId, currentRoleName) {
+        toggleElementDisplay(`edit-${roleId}`, 'none');
+        toggleElementDisplay(`edit-panel-${roleId}`, 'inline');
+        toggleElementDisplay(`delete-${roleId}`, 'none');
+        document.getElementById(`newRoleName-${roleId}`).value = currentRoleName;
+    }
+
+    function cancelEdit(roleId) {
+        toggleElementDisplay(`edit-${roleId}`, 'inline');
+        toggleElementDisplay(`edit-panel-${roleId}`, 'none');
+        toggleElementDisplay(`delete-${roleId}`, 'inline');
+    }
+
+    function toggleCreate() {
+        toggleElementDisplay('create-panel', 'inline');
+    }
+
+    function cancelCreate() {
+        toggleElementDisplay('create-panel', 'none');
+    }
+</script>
