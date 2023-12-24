@@ -7,9 +7,12 @@ public partial class RoleController : Controller
 {
     
     private readonly RoleManager<IdentityRole> _roleManager;
+    private readonly ILogger<RoleController> _logger; // Define the logger
 
-    public RoleController(RoleManager<IdentityRole> roleManager)
+    public RoleController(RoleManager<IdentityRole> roleManager, ILogger<RoleController> logger)
     {
         _roleManager = roleManager;
+        _logger = logger; // Inject the logger
     }
+
 }
