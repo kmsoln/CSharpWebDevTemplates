@@ -1,18 +1,7 @@
-﻿@using Web_Application.Config
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <!-- Title dynamically generated -->
-        <title>@ViewData["Title"] - @ProjectInfo.ProjectName</title>
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
-        <!-- Site-specific CSS -->
-        <link rel="stylesheet" href="~/css/main.css" asp-append-version="true"/>
-        <!-- Additional styles for this specific application -->
-        <link rel="stylesheet" href="~/Web_Application.styles.css" asp-append-version="true"/>
+        @await Html.PartialAsync("_Head")
     </head>
     
     <body>
