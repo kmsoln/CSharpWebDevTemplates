@@ -1,6 +1,5 @@
 using AuthService.Auth;
 using AuthService.Data;
-using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -52,6 +51,9 @@ app.UseHttpsRedirection(); // Redirect HTTP to HTTPS
 app.MapControllers(); // Map controllers for handling requests
 
 #endregion
+
+// Activating Identity Framework
+app.UseAuthorization();
 
 // Run the application
 app.Run();
