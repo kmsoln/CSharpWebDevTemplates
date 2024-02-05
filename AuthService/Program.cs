@@ -1,3 +1,6 @@
+using AuthService.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 #region ConfigureServices
@@ -10,6 +13,11 @@ builder.Services.AddSwaggerGen(); // Add Swagger for API documentation
 #region ConfigureDatabase
 
 string connectionString = builder.Configuration.GetConnectionString("MyDatabase") ?? "";
+
+builder.Services.AddDbContext<AuthDbContext>(o =>
+{
+    o.UseNpgsql(connectionString);
+});
 
 #endregion
 
