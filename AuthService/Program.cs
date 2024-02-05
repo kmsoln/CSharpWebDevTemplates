@@ -1,4 +1,7 @@
+using AuthService.Auth;
 using AuthService.Data;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,6 +23,16 @@ builder.Services.AddDbContext<AuthDbContext>(o =>
 });
 
 #endregion
+
+#region Authentication
+
+builder.Services.AddIdentity<AppUser, IdentityRole>()
+    .AddEntityFrameworkStores<AuthDbContext>()
+    .AddSignInManager<SignInManager<AppUser>>()
+    .AddDefaultTokenProviders();
+
+#endregion
+
 
 // Build the application
 var app = builder.Build();
