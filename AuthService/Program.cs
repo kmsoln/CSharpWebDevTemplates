@@ -7,6 +7,12 @@ builder.Services.AddEndpointsApiExplorer(); // Add API Explorer for endpoints
 builder.Services.AddSwaggerGen(); // Add Swagger for API documentation
 #endregion
 
+#region ConfigureDatabase
+
+string connectionString = builder.Configuration.GetConnectionString("MyDatabase") ?? "";
+
+#endregion
+
 // Build the application
 var app = builder.Build();
 
