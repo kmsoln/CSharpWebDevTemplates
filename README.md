@@ -10,66 +10,67 @@
 </div>
 
 ---
-# C-Sharp Templates Repository
+# Репозиторий шаблонов C-Sharp
 
-Welcome to the Templates Repository! This repository serves as a comprehensive guide and learning resource for begainners who interested in software development. Whether you're new to coding or seeking to enhance your skills, this repository will guide you through a practical project development journey.
+Добро пожаловать в Репозиторий шаблонов! Этот репозиторий служит в качестве всеобъемлющего руководства и учебного ресурса для новичков, интересующихся разработкой программного обеспечения. Независимо от того, новичок вы в программировании или стремитесь улучшить свои навыки, этот репозиторий проведет вас через практический процесс разработки проекта.
 
-## Dependencies
+## Зависимости
 
-Before you begin, ensure that you have the following dependencies installed:
+Прежде чем начать, убедитесь, что у вас установлены следующие зависимости:
 
-- [.NET SDK](https://dotnet.microsoft.com/download): Required for building and running .NET applications.
-- [Node.js and npm](https://nodejs.org/): Required for managing JavaScript packages and running React applications.
+- [.NET SDK](https://dotnet.microsoft.com/download): Необходим для сборки и запуска приложений .NET.
+- [Node.js и npm](https://nodejs.org/): Необходимы для управления пакетами JavaScript и запуска приложений React.
 
-Please make sure to install the appropriate versions of these dependencies to ensure compatibility with the projects in this repository.
+Пожалуйста, убедитесь, что установлены соответствующие версии этих зависимостей, чтобы обеспечить совместимость с проектами в этом репозитории.
 
+## Клонирование репозитория
 
-## Clone Repository
-
-If you haven't already, clone this repository to your local machine using the following command:
+Если вы еще этого не сделали, клонируйте этот репозиторий на свой локальный компьютер с помощью следующей команды:
 
 ```bash
     git clone https://github.com/kmsoln/VlsuProjects.git
 ```
 
-## Using the Repository from IDE
+## Использование репозитория из среды разработки (IDE)
 
-If you prefer to use an Integrated Development Environment (IDE), follow these steps:
+Если вы предпочитаете использовать интегрированную среду разработки (IDE), следуйте этим шагам:
 
-1. **Open the Repository**: Open your IDE and navigate to the location where you cloned the repository.
+1. **Откройте репозиторий**: Откройте свою IDE и перейдите в место, где вы склонировали репозиторий.
 
-    - For [Visual Studio][vs]:
-      - Open Visual Studio.
-      - Choose "Open a Project or Solution."
-      - Navigate to the directory where you cloned the repository and open the appropriate solution file.
+   - Для [Visual Studio][vs]:
+      - Откройте Visual Studio.
+      - Выберите "Открыть проект или решение".
+      - Перейдите в каталог, в который вы склонировали репозиторий, и откройте соответствующий файл решения.
 
-    - For [Visual Studio Code][vs-code]:
-      - Open Visual Studio Code.
-      - Use the "Open Folder" option to select the directory where you cloned the repository.
+   - Для [Visual Studio Code][vs-code]:
+      - Откройте Visual Studio Code.
+      - Используйте опцию "Открыть папку", чтобы выбрать каталог, в который вы склонировали репозиторий.
 
-    - For [JetBrains Rider][rider]:
-      - Open JetBrains Rider.
-      - Choose "Open" from the start screen or use "File" > "Open" from the menu.
-      - Navigate to the directory where you cloned the repository and open the appropriate solution file.
+   - Для [JetBrains Rider][rider]:
+      - Откройте JetBrains Rider.
+      - Выберите "Открыть" со стартового экрана или используйте "Файл" > "Открыть" из меню.
+      - Перейдите в каталог, в который вы склонировали репозиторий, и откройте соответствующий файл решения.
 
-    - For other IDEs:
-      - Refer to your IDE's documentation for opening projects or repositories.
+   - Для других IDE:
+      - Обратитесь к документации вашей IDE по открытию проектов или репозиториев.
 
 [vs]: (https://visualstudio.microsoft.com/vs/)
 [vs-code]: (https://code.visualstudio.com/download)
 [rider]: (https://www.jetbrains.com/rider/download/)
+---
 
-Feel free to choose the workflow that best suits your preferences and development environment.
+## Не стесняйтесь выбрать тот рабочий процесс, который лучше всего соответствует вашим предпочтениям и среде разработки.
 
-## Templates Information
+## Информация о Шаблонах
 
-Here are the projects included in this repository, each showcasing different aspects of software development using various architectures. Each project has its own unique features, architecture, and technologies employed. Whether you're interested in monolithic or microservices, you'll find a range of examples to learn from.
+В этом репозитории представлены проекты, каждый из которых демонстрирует различные аспекты разработки программного обеспечения с использованием различных архитектур. У каждого проекта есть свои уникальные особенности, архитектура и используемые технологии. Независимо от того, интересуетесь ли вы монолитными или микросервисными приложениями, здесь вы найдете ряд примеров для изучения.
 
-Feel free to explore the projects and dive into the code to better understand the development process. These projects serve as practical demonstrations of how to build web application, enhance your skills, and apply best practices.
+Не стесняйтесь изучать проекты и погружаться в код для лучшего понимания процесса разработки. Эти проекты служат практическими демонстрациями того, как создавать веб-приложения, улучшать свои навыки и применять лучшие практики.
 
 ---
 
-| Project                                 | Protocol | Database      | Frontend Framework | Style Framework |
+| Проект                                  | Протокол | База данных   | Фронтенд-фреймворк | Стиль-фреймворк |
+|-----------------------------------------|----------|--------------|---------------------|--------_--------|
 |-----------------------------------------|----------|---------------|--------------------|-----------------|
 | [Monolith][monolith-rdme]               | REST     | PostgreSQL    | Blazor             | CSS             |
 | [Microservices][microservice-rdme]      | REST     | PostgreSQL    | React              | CSS             |
@@ -79,12 +80,12 @@ Feel free to explore the projects and dive into the code to better understand th
 [microservice-rdme]: https://github.com/kmsoln/VlsuProjects/blob/master/Web%20Application/README-EN.md
 [mvc-rdme]: https://github.com/kmsoln/VlsuProjects/blob/master/Web%20Application/README-EN.md
 
-## How to Use This Repository
+## Как использовать этот репозиторий
 
-Each project's folder contains detailed README.md files for each phase. These README files provide explanations, code snippets, and insights into the technologies used during that phase. To make the most of this repository:
+В каждой папке проекта содержатся подробные файлы README.md для каждой фазы. Эти файлы README предоставляют объяснения, фрагменты кода и понимание технологий, использованных на этой фазе. Чтобы максимально эффективно использовать этот репозиторий:
 
-1. Start with the main README.md to understand the repository's structure and purpose.
-2. Navigate to the project you're interested in.
-3. Explore the phases in chronological order, following the provided README files.
-4. Experiment with the code and concepts to deepen your understanding.
-
+1. Начните с основного README.md, чтобы понять структуру и цель репозитория.
+2. Перейдите к проекту, который вас интересует.
+3. Изучайте фазы в хронологическом порядке, следуя предоставленным файлам README.
+4. Экспериментируйте с кодом и концепциями, чтобы углубить свое понимание.
+   
