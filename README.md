@@ -70,7 +70,6 @@
 
 | Проект                                  | Протокол | База данных   | Фронтенд-фреймворк | Стиль-фреймворк |
 |-----------------------------------------|----------|---------------|--------------------|-----------------|
-| [Monolith][monolith-rdme]               | REST     | PostgreSQL    | Blazor             | CSS             |
 | [Microservices][microservice-rdme]      | REST     | PostgreSQL    | React              | CSS             |
 | [Model-View-Controller (MVC)][mvc-rdme] | REST     | PostgreSQL    | Razor              | Bootstrap       |
 
