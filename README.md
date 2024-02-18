@@ -59,7 +59,7 @@
 
 | Проект                                  | Протокол | База данных   | Фронтенд-фреймворк | Стиль-фреймворк |
 |-----------------------------------------|----------|---------------|--------------------|-----------------|
-| [Microservices][microservice-rdme]      | REST     | PostgreSQL    | React              | CSS             |
+| [Microservices][microservice-rdme]      | REST     | PostgreSQL    | React              | Bootstrap       |
 | [Model-View-Controller (MVC)][mvc-rdme] | REST     | PostgreSQL    | Razor              | Bootstrap       |
 
 [monolith-rdme]: https://github.com/kmsoln/VlsuProjects/blob/master/Web%20Application/README-EN.md
