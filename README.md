@@ -1,15 +1,4 @@
 [creator]: kmsoln
-<div align="center">
-    <h3 style="text-align: center; color: tan">ВЛАДИМИРСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ</h3>
-</div>
-
-<div align="center">
-    <a href="https://www.vlsu.ru/"><img src="https://img.shields.io/badge/VLSU-Сайт-yellow.svg" alt="VLSU SITE"></a>
-    <a href="https://vk.com/vlsu_info"><img src="https://img.shields.io/badge/VLSU-ВКонтакте-blue.svg" alt="VLSU SITE"></a>
-    <a href="https://rutube.ru/channel/23750791/"><img src="https://img.shields.io/badge/VLSU-RuTube-black.svg" alt="VLSU SITE"></a>
-</div>
-
----
 # Репозиторий шаблонов C-Sharp
 
 Добро пожаловать в Репозиторий шаблонов! Этот репозиторий служит в качестве всеобъемлющего руководства и учебного ресурса для новичков, интересующихся разработкой программного обеспечения. Независимо от того, новичок вы в программировании или стремитесь улучшить свои навыки, этот репозиторий проведет вас через практический процесс разработки проекта.
