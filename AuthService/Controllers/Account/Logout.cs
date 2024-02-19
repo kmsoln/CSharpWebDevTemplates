@@ -5,8 +5,7 @@ namespace AuthService.Controllers.Account;
 
 public partial class AccountController
 {
-    
-    // POST: api/AccountApi/Logout
+    // POST: api/Account/Logout
     [HttpPost("Logout")]
     [Authorize]
     public async Task<IActionResult> Logout()
