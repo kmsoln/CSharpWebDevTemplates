@@ -6,7 +6,7 @@ namespace AuthService.Controllers.Account;
 
 public partial class AccountController
 {
-    // POST: api/AccountApi/Login
+    // POST: api/Account/Login
     [HttpPost("Login")]
     [AllowAnonymous]
     public async Task<IActionResult> Login([FromBody] LoginModel viewModel)
@@ -22,7 +22,7 @@ public partial class AccountController
                 viewModel.Email!,
                 viewModel.Password!,
                 viewModel.RememberMe,
-                lockoutOnFailure: false
+                false
             );
 
             // Check if the login attempt was successful
@@ -34,13 +34,11 @@ public partial class AccountController
                 Log(LogLevel.Information, $"User {viewModel.Email} logged in successfully.");
                 return Ok(new { Message = "Login successful." });
             }
-            else
-            {
-                // User cannot log in, return a 401 Unauthorized response with an error message
-                ModelState.AddModelError(string.Empty, "Invalid login attempt.");
-                Log(LogLevel.Warning, $"Invalid login attempt for user {viewModel.Email}.");
-                return Unauthorized(new { Errors = new[] { "Invalid login attempt." } });
-            }
+
+            // User cannot log in, return a 401 Unauthorized response with an error message
+            ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+            Log(LogLevel.Warning, $"Invalid login attempt for user {viewModel.Email}.");
+            return Unauthorized(new { Errors = new[] { "Invalid login attempt." } });
         }
 
         // If the model state is not valid, return a 400 Bad Request with error details
