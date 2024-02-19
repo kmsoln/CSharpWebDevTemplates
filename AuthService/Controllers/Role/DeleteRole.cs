@@ -4,6 +4,7 @@ namespace AuthService.Controllers.Role;
 
 public partial class RoleController
 {
+    // DELETE: api/Role/DeleteRole
     [HttpDelete("DeleteRole")]
     public async Task<IActionResult> DeleteRole(string roleId)
     {

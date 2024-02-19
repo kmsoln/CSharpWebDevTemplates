@@ -6,6 +6,7 @@ namespace AuthService.Controllers.Role;
 
 public partial class RoleController
 {
+    // GET: api/Role/AllRoles
     [HttpGet("AllRoles")]
     [Authorize]
     public async Task<IActionResult> AllRoles()

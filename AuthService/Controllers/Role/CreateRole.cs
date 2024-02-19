@@ -5,6 +5,7 @@ namespace AuthService.Controllers.Role;
 
 public partial class RoleController
 {
+    // POST: api/Role/CreateRole
     [HttpPost("CreateRole")]
     public async Task<IActionResult> CreateRole([FromBody] string roleName)
     {

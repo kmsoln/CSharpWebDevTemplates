@@ -4,6 +4,7 @@ namespace AuthService.Controllers.Role;
 
 public partial class RoleController
 {
+    // PUT: api/Role/UpdateRole
     [HttpPut("UpdateRole")]
     public async Task<IActionResult> UpdateRole(string roleId, string newRoleName)
     {
