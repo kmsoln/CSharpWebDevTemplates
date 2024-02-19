@@ -1,0 +1,27 @@
+﻿@using MVC.Config
+@{
+    ViewData["Title"] = "Home";
+}
+
+<main role="main" class="pb-3">
+    <div class="text-center mt-5">
+        <h1 class="display-4">Welcome to Our Course Project!</h1>
+        <p class="lead">Enhance your skills in C# web development with us.</p>
+        @{
+            if (ProjectInfo.StudentName == string.Empty || ProjectInfo.StudentGroup == string.Empty)
+            {
+                <p class="lead">Please, go to " Config/ProjectInfo.cs " and add complete the required fields</p>
+            }
+            else if (ProjectInfo.ProjectName == "MyProject")
+            {
+                <p class="lead">Please, go to " Config/ProjectInfo.cs " and change the project name</p>
+            }
+            else
+            {
+                <p class="lead">Student Name: @ProjectInfo.StudentName</p>
+                <p class="lead">Group: @ProjectInfo.StudentGroup</p>
+            }
+        }
+
+    </div>
+</main>
