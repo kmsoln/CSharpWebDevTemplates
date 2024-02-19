@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AuthService.Controllers.Account;
 
-public partial class AccountController 
+public partial class AccountController
 {
     // POST: api/Account/Register
     [HttpPost("Register")]
