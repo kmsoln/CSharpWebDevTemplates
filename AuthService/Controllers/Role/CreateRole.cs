@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using AuthService.Models.Role;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AuthService.Controllers.Role;
@@ -7,12 +8,12 @@ public partial class RoleController
 {
     // POST: api/Role/CreateRole
     [HttpPost("CreateRole")]
-    public async Task<IActionResult> CreateRole([FromBody] string roleName)
+    public async Task<IActionResult> CreateRole([FromBody] CreateRoleModel model)
     {
         try
         {
             // Create a new role object with the provided roleName
-            var newRole = new IdentityRole { Name = roleName };
+            var newRole = new IdentityRole { Name = model.RoleName };
 
             // Attempt to create the new role
             var result = await roleManager.CreateAsync(newRole);

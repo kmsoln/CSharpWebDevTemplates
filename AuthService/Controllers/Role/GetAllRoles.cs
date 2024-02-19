@@ -13,13 +13,18 @@ public partial class RoleController
     {
         try
         {
+            // Log the action entry
             Log(LogLevel.Information, "AllRoles GET action called.");
 
+            // Retrieve all roles from the role manager
             var allRoles = await roleManager.Roles.ToListAsync();
+
+            // Return a 200 OK response with the list of roles
             return Ok(allRoles);
         }
         catch (Exception ex)
         {
+            // If an exception occurs, log the error and return a 500 Internal Server Error response
             Log(LogLevel.Error, $"An error occurred while retrieving all roles: {ex.Message}");
             return StatusCode(500, "An error occurred while retrieving all roles.");
         }
