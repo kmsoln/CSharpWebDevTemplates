@@ -13,8 +13,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Microservices\Com
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiGatway", "Microservices\ApiGatway\ApiGatway.csproj", "{21ED8984-0376-4F2D-ABEF-C7507AA5373E}"
 EndProject
-Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "Client", "Microservices\Client\Client.esproj", "{30CAA2AB-B8B6-4DFB-BF24-E4125ED18177}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{D8D198AC-B34A-4FA9-B2A4-D5E153EF7AAD}"
 EndProject
 Global
