@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AuthService.Controllers.Role;
 
+[ApiController]
+[Route("api/[controller]")]
 [Authorize]
 // [Authorize(Roles = "admin")]
 public partial class RoleController(

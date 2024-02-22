@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace AuthService.Controllers.Account;
 
 [ApiController]
-[Route("[controller]")]
+[Route("api/[controller]")]
 public partial class AccountController(
     UserManager<AppUser> userManager,
     SignInManager<AppUser> signInManager,
