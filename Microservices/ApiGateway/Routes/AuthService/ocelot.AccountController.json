@@ -1,0 +1,42 @@
+{
+  "ServiceName": "AuthService",
+  "ControllerName": "AccountController",
+  "Routes": [
+    {
+      "PathName": "Login",
+      "PathDescription" : "Path of login method",
+      "DownstreamPathTemplate": "/api/Account/Login",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [ { "Host": "localhost", "Port": 5058 } ],
+      "UpstreamPathTemplate": "/api/Account/Login",
+      "UpstreamHttpMethod": ["POST"]
+    },
+    {
+      "PathName": "Register",
+      "PathDescription" : "Path of register method",
+      "DownstreamPathTemplate": "/api/Account/Register",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [ { "Host": "localhost", "Port": 5058 } ],
+      "UpstreamPathTemplate": "/api/Account/Register",
+      "UpstreamHttpMethod": ["POST"]
+    },
+    {
+      "PathName": "Logout",
+      "PathDescription" : "Path of logout method",
+      "DownstreamPathTemplate": "/api/Account/Logout",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [ { "Host": "localhost", "Port": 5058 } ],
+      "UpstreamPathTemplate": "/api/Account/Logout",
+      "UpstreamHttpMethod": ["POST"]
+    },
+    {
+      "PathName": "ResetPassword",
+      "PathDescription" : "Path of resetting password method",
+      "DownstreamPathTemplate": "/api/Account/ResetPassword",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [ { "Host": "localhost", "Port": 5058 } ],
+      "UpstreamPathTemplate": "/api/Account/ResetPassword",
+      "UpstreamHttpMethod": ["POST"]
+    }
+  ]
+}
