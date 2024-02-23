@@ -1,9 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace AuthService.Models.Account;
+namespace AuthService.Models.User;
 
 public class ChangeMailModel
 {
+    public string UserId { get; set; }
+    
     [Required(ErrorMessage = "New Email is required")]
     [EmailAddress(ErrorMessage = "Invalid email address")]
     public string? NewEmail { get; set; }

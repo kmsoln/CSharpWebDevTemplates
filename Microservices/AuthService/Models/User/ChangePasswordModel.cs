@@ -1,9 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace AuthService.Models.Account;
+namespace AuthService.Models.User;
 
 public class ChangePasswordModel
 {
+    public string UserId { get; set; }
+    
     [Required(ErrorMessage = "Old Password is required")]
     [DataType(DataType.Password)]
     public string? OldPassword { get; set; }
