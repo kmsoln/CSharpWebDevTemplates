@@ -3,9 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC", "MVC\MVC.csproj", "{1BBFD09D-7696-4BAD-999F-425077530E57}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Microservices", "Microservices", "{CD116DB9-4954-404E-BE5F-5B5DA1AAC5FB}"
-	ProjectSection(SolutionItems) = preProject
-		Microservices\README-EN.md = Microservices\README-EN.md
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{D8D198AC-B34A-4FA9-B2A4-D5E153EF7AAD}"
 EndProject
