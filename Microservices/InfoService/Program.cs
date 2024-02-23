@@ -5,7 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 #region ConfigureServices
 // Configure services for the application
-builder.Services.AddControllers(); // Add MVC controllers
+builder.Services.AddControllers(); // Add controllers
 builder.Services.AddEndpointsApiExplorer(); // Add API Explorer for endpoints
 builder.Services.AddSwaggerGen(); // Add Swagger for API documentation
 #endregion
