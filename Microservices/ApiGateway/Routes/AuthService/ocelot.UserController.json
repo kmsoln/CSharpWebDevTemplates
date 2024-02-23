@@ -1,0 +1,69 @@
+{
+  "ServiceName": "AuthService",
+  "ControllerName": "UserController",
+  "Routes": [
+    {
+      "PathName": "ChangeMail",
+      "PathDescription" : "Path of changing mail method but for users just.",
+      "DownstreamPathTemplate": "/api/User/ChangeMail",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [ { "Host": "localhost", "Port": 5058 } ],
+      "UpstreamPathTemplate": "/api/User/ChangeMail",
+      "UpstreamHttpMethod": ["PUT"]
+    },
+    {
+      "PathName": "ChangePassword",
+      "PathDescription" : "Path of changing password method but for users just.",
+      "DownstreamPathTemplate": "/api/User/ChangePassword",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [ { "Host": "localhost", "Port": 5058 } ],
+      "UpstreamPathTemplate": "/api/User/ChangePassword",
+      "UpstreamHttpMethod": ["PUT"]
+    },
+    {
+      "PathName": "AddRoleToUser",
+      "PathDescription" : "Path of adding specific role to user.",
+      "DownstreamPathTemplate": "/api/User/AddRoleToUser",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [ { "Host": "localhost", "Port": 5058 } ],
+      "UpstreamPathTemplate": "/api/User/AddRoleToUser",
+      "UpstreamHttpMethod": ["POST"]
+    },
+    {
+      "PathName": "RemoveRoleFromUser",
+      "PathDescription" : "Path of removing specific role from user.",
+      "DownstreamPathTemplate": "/api/User/RemoveRoleFromUser",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [ { "Host": "localhost", "Port": 5058 } ],
+      "UpstreamPathTemplate": "/api/User/RemoveRoleFromUser",
+      "UpstreamHttpMethod": ["DELETE"]
+    },
+    {
+      "PathName": "GetUserProfile",
+      "PathDescription" : "Path of getting user profile details.",
+      "DownstreamPathTemplate": "/api/User/GetUserProfile",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [ { "Host": "localhost", "Port": 5058 } ],
+      "UpstreamPathTemplate": "/api/User/GetUserProfile",
+      "UpstreamHttpMethod": ["GET"]
+    },
+    {
+      "PathName": "UpdateUserProfile",
+      "PathDescription" : "Path of updating user profile details.",
+      "DownstreamPathTemplate": "/api/User/UpdateUserProfile",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [ { "Host": "localhost", "Port": 5058 } ],
+      "UpstreamPathTemplate": "/api/User/UpdateUserProfile",
+      "UpstreamHttpMethod": ["PUT"]
+    },
+    {
+      "PathName": "DeleteUserProfile",
+      "PathDescription" : "Path of removing user profile.",
+      "DownstreamPathTemplate": "/api/User/DeleteUserProfile",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [ { "Host": "localhost", "Port": 5058 } ],
+      "UpstreamPathTemplate": "/api/User/DeleteUserProfile",
+      "UpstreamHttpMethod": ["DELETE"]
+    }
+  ]
+}
