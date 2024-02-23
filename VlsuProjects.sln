@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthService", "Microservice
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfoService", "Microservices\InfoService\InfoService.csproj", "{3716AAF4-8762-4AAC-BD3B-58A6985786E2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiGateway", "Microservices\ApiGateway\ApiGateway.csproj", "{21ED8984-0376-4F2D-ABEF-C7507AA5373E}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "Client", "Microservices\Client\Client.esproj", "{30CAA2AB-B8B6-4DFB-BF24-E4125ED18177}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
