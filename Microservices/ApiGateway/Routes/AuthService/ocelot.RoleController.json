@@ -1,0 +1,42 @@
+{
+  "ServiceName": "AuthService",
+  "ControllerName": "RoleController",
+  "Routes": [
+    {
+      "PathName": "GetAllRoles",
+      "PathDescription" : "Path to get all roles",
+      "DownstreamPathTemplate": "/api/Role/GetAllRoles",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [ { "Host": "localhost", "Port": 5058 } ],
+      "UpstreamPathTemplate": "/api/Role/GetAllRoles",
+      "UpstreamHttpMethod": ["GET"]
+    },
+    {
+      "PathName": "CreateRole",
+      "PathDescription" : "Path to create role",
+      "DownstreamPathTemplate": "/api/Role/CreateRole",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [ { "Host": "localhost", "Port": 5058 } ],
+      "UpstreamPathTemplate": "/api/Role/CreateRole",
+      "UpstreamHttpMethod": ["POST"]
+    },
+    {
+      "PathName": "UpdateRole",
+      "PathDescription" : "Path to update role",
+      "DownstreamPathTemplate": "/api/Role/UpdateRole",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [ { "Host": "localhost", "Port": 5058 } ],
+      "UpstreamPathTemplate": "/api/Role/UpdateRole",
+      "UpstreamHttpMethod": ["PUT"]
+    },
+    {
+      "PathName": "DeleteRole",
+      "PathDescription" : "Path to delete role",
+      "DownstreamPathTemplate": "/api/Role/DeleteRole",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [ { "Host": "localhost", "Port": 5058 } ],
+      "UpstreamPathTemplate": "/api/Role/DeleteRole",
+      "UpstreamHttpMethod": ["DELETE"]
+    }
+  ]
+}
