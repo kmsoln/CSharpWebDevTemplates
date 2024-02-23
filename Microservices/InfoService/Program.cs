@@ -1,3 +1,6 @@
+using InfoService.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 #region ConfigureServices
@@ -5,6 +8,17 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers(); // Add MVC controllers
 builder.Services.AddEndpointsApiExplorer(); // Add API Explorer for endpoints
 builder.Services.AddSwaggerGen(); // Add Swagger for API documentation
+#endregion
+
+#region ConfigureDatabase
+
+string connectionString = builder.Configuration.GetConnectionString("MyDatabase") ?? "";
+
+builder.Services.AddDbContext<CustomDbContext>(o =>
+{
+    o.UseNpgsql(connectionString);
+});
+
 #endregion
 
 // Build the application
