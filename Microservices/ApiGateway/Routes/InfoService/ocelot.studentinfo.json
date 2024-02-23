@@ -1,0 +1,22 @@
+{
+  "ServiceName": "InfoService",
+  "ControllerName": "ProjectController",
+  "Routes": [
+    {
+      "PathName": "GetProjectInfo",
+      "PathDescription": "Path to get project info",
+      "DownstreamPathTemplate": "/api/Project/GetProjectInfo",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5067
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Project/GetProjectInfo",
+      "UpstreamHttpMethod": [
+        "GET"
+      ]
+    }
+  ]
+}
