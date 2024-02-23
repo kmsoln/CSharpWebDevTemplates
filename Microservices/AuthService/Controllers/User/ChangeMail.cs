@@ -2,9 +2,9 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace AuthService.Controllers.Account;
+namespace AuthService.Controllers.User;
 
-public partial class AccountController
+public partial class UserController
 {
     // PUT: api/Account/ChangeMail
     [Authorize]
