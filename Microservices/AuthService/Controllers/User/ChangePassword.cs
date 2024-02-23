@@ -1,4 +1,5 @@
 ﻿using AuthService.Models.Account;
+using AuthService.Models.User;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -6,7 +7,7 @@ namespace AuthService.Controllers.User;
 
 public partial class UserController
 {
-    // PUT: api/Account/ChangePassword
+// PUT: api/Account/ChangePassword
     [HttpPut("ChangePassword")]
     [Authorize]
     public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordModel model)
@@ -14,17 +15,14 @@ public partial class UserController
         // Log action entry
         Log(LogLevel.Information, "ChangePassword PUT action called.");
 
-        // Retrieve the username of the currently authenticated user
-        var username = User.Identity.Name;
-
-        // Retrieve the user from the user manager using the username
-        var user = await userManager.FindByNameAsync(username);
+        // Retrieve the user from the user manager using the UserId from the model
+        var user = await userManager.FindByIdAsync(model.UserId);
 
         // Check if the user exists
         if (user == null)
         {
             // Log and return a 404 Not Found if the user is not found
-            Log(LogLevel.Warning, "ChangePassword: User not found.");
+            Log(LogLevel.Warning, $"ChangePassword: User not found for UserId: {model.UserId}");
             return NotFound(new { Message = "User not found." });
         }
 

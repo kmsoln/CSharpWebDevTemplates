@@ -1,4 +1,4 @@
-﻿using AuthService.Models.Account;
+﻿using AuthService.Models.User;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,7 +12,7 @@ public partial class UserController
     public async Task<IActionResult> ChangeMail([FromBody] ChangeMailModel model)
     {
         // Log action entry
-        Log(LogLevel.Information, "ChangeMail POST action called.");
+        Log(LogLevel.Information, "ChangeMail PUT action called.");
 
         // Check if the model is valid
         if (ModelState.IsValid)
@@ -21,12 +21,13 @@ public partial class UserController
             if (model.NewEmail != model.ConfirmNewEmail)
                 return StatusCode(404, new { Message = "Email and confirmation email do not match." });
 
-            // Retrieve the currently logged-in user from the user manager
-            var user = await userManager.GetUserAsync(User);
+            try
+            {
+                // Retrieve the user from the user manager using the UserId from the model
+                var user = await userManager.FindByIdAsync(model.UserId);
 
-            // Check if the user exists
-            if (user != null)
-                try
+                // Check if the user exists
+                if (user != null)
                 {
                     // Attempt to update the user's email
                     user.Email = model.NewEmail;
@@ -50,18 +51,19 @@ public partial class UserController
                     return BadRequest(new
                         { Errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage) });
                 }
-                catch (Exception ex)
-                {
-                    // Log any exceptions that occurred during email update and return a 500 Internal Server Error
-                    Log(LogLevel.Error, $"An error occurred while updating user email: {ex.Message}");
-                    return StatusCode(500, new { Message = "Internal Server Error" });
-                    // Handle other exception details if needed
-                }
 
-            // Log the case where the user cannot be found and return a 404 Not Found
-            ModelState.AddModelError(string.Empty, "User not found.");
-            Log(LogLevel.Error, "User not found during email change.");
-            return NotFound(new { Message = "User not found" });
+                // Log the case where the user cannot be found and return a 404 Not Found
+                ModelState.AddModelError(string.Empty, "User not found.");
+                Log(LogLevel.Error, "User not found during email change.");
+                return NotFound(new { Message = "User not found" });
+            }
+            catch (Exception ex)
+            {
+                // Log any exceptions that occurred during email update and return a 500 Internal Server Error
+                Log(LogLevel.Error, $"An error occurred while updating user email: {ex.Message}");
+                return StatusCode(500, new { Message = "Internal Server Error" });
+                // Handle other exception details if needed
+            }
         }
 
         // If the model state is not valid, return a 400 Bad Request with error details
