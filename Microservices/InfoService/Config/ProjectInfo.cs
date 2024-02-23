@@ -1,8 +1,8 @@
 ﻿namespace InfoService.Config;
 
-public class ProjectInfo
+public static class ProjectInfo
 {
-    public readonly string ProjectName = "MyProject";
-    public readonly string StudentName = "";
-    public readonly string StudentGroup = "";
+    public static readonly string ProjectName = "MyProject";
+    public static readonly string StudentName = "";
+    public static readonly string StudentGroup = "";
 }

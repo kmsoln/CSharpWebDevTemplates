@@ -8,8 +8,13 @@ public partial class ProjectController
     [HttpGet("GetProjectInfo")]
     public IActionResult GetProjectInfo()
     {
-        ProjectInfo projectInfo = new();
-
-        return Ok(projectInfo);
+        Log(LogLevel.Information, "GetProjectInfo method called.");
+        
+        return Ok(new
+        {
+            ProjectName = ProjectInfo.ProjectName,
+            StudentName = ProjectInfo.StudentName,
+            StudentGroup = ProjectInfo.StudentGroup
+        });
     }
 }
