@@ -7,7 +7,8 @@
     <BuildCommand></BuildCommand>
     <!-- Command to create an optimized build of the project that's ready for publishing -->
     <ProductionBuildCommand>npm run build</ProductionBuildCommand>
-    <!-- Folder where production build objects will be placed -->
+    <!-- Output path for the build -->
+    <OutputPath>$(MSBuildProjectDirectory)\obj\Debug\</OutputPath>
     <BuildOutputFolder>$(MSBuildProjectDirectory)\build</BuildOutputFolder>
   </PropertyGroup>
   <ItemGroup>
