@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using AuthService.Models.User;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AuthService.Controllers.User;
@@ -7,17 +7,17 @@ public partial class UserController
 {
     // GET: api/User/GetUserProfile
     [HttpGet("GetUserProfile")]
-    public async Task<IActionResult> GetUserProfile(string userId)
+    public async Task<IActionResult> GetUserProfile([FromBody] GetUserProfileModel model)
     {
         try
         {
             // Find the user by ID
-            var user = await userManager.FindByIdAsync(userId);
+            var user = await userManager.FindByIdAsync(model.UserId);
 
             // If user not found, log a warning and return NotFound result
             if (user == null)
             {
-                Log(LogLevel.Warning, $"User with ID '{userId}' not found.");
+                Log(LogLevel.Warning, $"User with ID '{model.UserId}' not found.");
                 return NotFound(new { Message = "User not found" });
             }
 

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AuthService.Models.User;
+using Microsoft.AspNetCore.Mvc;
 
 namespace AuthService.Controllers.User;
 
@@ -6,17 +7,17 @@ public partial class UserController
 {
     // DELETE: api/User/DeleteUserProfile
     [HttpDelete("DeleteUserProfile")]
-    public async Task<IActionResult> DeleteUserProfile(string userId)
+    public async Task<IActionResult> DeleteUserProfile([FromBody] DeleteUserProfileModel model)
     {
         try
         {
             // Find the user by ID
-            var user = await userManager.FindByIdAsync(userId);
+            var user = await userManager.FindByIdAsync(model.UserId);
 
             // If user not found, return a 404 Not Found response
             if (user == null)
             {
-                Log(LogLevel.Warning, $"User with ID '{userId}' not found.");
+                Log(LogLevel.Warning, $"User with ID '{model.UserId}' not found.");
                 return NotFound(new { Message = "User not found." });
             }
 
