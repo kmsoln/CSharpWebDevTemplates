@@ -9,11 +9,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Microservices", "Microservi
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{D8D198AC-B34A-4FA9-B2A4-D5E153EF7AAD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Microservices\Common\Common.csproj", "{FAFF7555-2A5C-4AAF-9449-0CA560BC3888}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Microservices\Services\Common\Common.csproj", "{FAFF7555-2A5C-4AAF-9449-0CA560BC3888}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthService", "Microservices\AuthService\AuthService.csproj", "{DCD2F591-276E-4FD2-89F0-00069C32D22E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthService", "Microservices\Services\AuthService\AuthService.csproj", "{DCD2F591-276E-4FD2-89F0-00069C32D22E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfoService", "Microservices\InfoService\InfoService.csproj", "{3716AAF4-8762-4AAC-BD3B-58A6985786E2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfoService", "Microservices\Services\InfoService\InfoService.csproj", "{3716AAF4-8762-4AAC-BD3B-58A6985786E2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiGateway", "Microservices\ApiGateway\ApiGateway.csproj", "{21ED8984-0376-4F2D-ABEF-C7507AA5373E}"
 EndProject

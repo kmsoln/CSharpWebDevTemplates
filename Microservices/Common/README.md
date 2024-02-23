@@ -1,1 +1,0 @@
-I added here the common code and libraries that is used across all microservices. this project type is Class Library, you can read more about it.
