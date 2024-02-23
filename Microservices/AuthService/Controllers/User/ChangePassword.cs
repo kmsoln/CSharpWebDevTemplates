@@ -1,5 +1,4 @@
-﻿using AuthService.Models.Account;
-using AuthService.Models.User;
+﻿using AuthService.Models.User;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
