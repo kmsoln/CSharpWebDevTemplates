@@ -6,7 +6,7 @@ import LoginForm from "./pages/account/LoginForm";
 function Router() {
     return (
         <Routes>
-            
+            <Route path="/" element={<Home/>}/>
         </Routes>
     );
 }
