@@ -1,15 +1,23 @@
-import React from 'react';
+import React, {ReactNode} from 'react';
+import Header from "./Header";
+import Footer from "./Footer";
 
-function Layout() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/Layout.tsx</code> and save to reload.
-        </p>
-      </header>
-    </div>
-  );
+interface LayoutProps {
+    children: ReactNode;
+}
+
+const Layout: React.FC<LayoutProps> = ({children}) => {
+    return (
+        <>
+            <Header/>
+
+            <div>
+                {children}
+            </div>
+
+            <Footer/>
+        </>
+    );
 }
 
 export default Layout;
