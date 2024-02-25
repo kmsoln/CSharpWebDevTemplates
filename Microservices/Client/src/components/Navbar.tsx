@@ -4,14 +4,12 @@ import NavbarItem from "./navbar/NavbarItem";
 import AdminSection from "./navbar/AdminSection";
 import AuthenticatedSection from "./navbar/AuthenticatedSection";
 import NonAuthenticatedSection from "./navbar/NonAuthenticatedSection";
-import useAuth from "../hooks/useAuth";
 
 
 const Navbar: React.FC = () => {
     
-    const auth = useAuth()
-    const isAuthenticated = auth.isAuthenticated
-    const userName = auth.user?.userName
+    const isAuthenticated = false
+    const userName = "kmsoln"
     
     return (
         <NavbarContainer>
@@ -29,6 +27,14 @@ const Navbar: React.FC = () => {
                     <ul className="navbar-nav flex-grow-1">
                         <NavbarItem label={"Home"} url={"/"}/>
                         {isAuthenticated ? <AdminSection/> : ("")}
+                    </ul>
+
+                    <ul className="navbar-nav">
+                        {isAuthenticated ? (
+                            <AuthenticatedSection userName={ userName ? userName : "" }/>
+                        ) : (
+                            <NonAuthenticatedSection/>
+                        )}
                     </ul>
                 </div>
             </div>
