@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Layout from './components/Layout';
+import {BrowserRouter} from 'react-router-dom';
+import Router from "./Router";
 
 const Index = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+    document.getElementById('root') as HTMLElement
 );
 Index.render(
-  <React.StrictMode>
-    <Layout />
-  </React.StrictMode>
+    <React.StrictMode>
+        <BrowserRouter>
+            <Router/>
+        </BrowserRouter>
+    </React.StrictMode>
 );
